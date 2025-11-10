@@ -1,58 +1,70 @@
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="LeeKangRyong">
-    <meta name="description" content="프론트엔드 개발자 이강룡의 포트폴리오입니다. vanillaJS로 구현했습니다.">
-    <meta name="keywords" content="프론트엔드, FE, 개발자, 포트폴리오, JavaScript, HTML, CSS">
-    
-    <meta property="og:title" content="이강룡 - FE 포트폴리오">
-    <meta property="og:description" content="프론트엔드 개발자 이강룡의 포트폴리오">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://portfolio-krlee.vercel.app">
-    <meta property="og:image" content="https://portfolio-krlee.vercel.app/thumbnail.png">
-    
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://portfolio-krlee.vercel.app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="LeeKangRyong">
+        <meta name="description" content="프론트엔드 개발자 이강룡의 포트폴리오입니다. vanillaJS로 구현했습니다.">
+        <meta name="keywords" content="프론트엔드, FE, 개발자, 포트폴리오, JavaScript, HTML, CSS">
+        
+        <meta property="og:title" content="이강룡 - FE 포트폴리오">
+        <meta property="og:description" content="프론트엔드 개발자 이강룡의 포트폴리오">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://portfolio-krlee.vercel.app">
+        <meta property="og:image" content="https://portfolio-krlee.vercel.app/thumbnail.png">
+        
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://portfolio-krlee.vercel.app">
 
-    <link rel="icon" href="/gamja.png">
-    
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "이강룡",
-            "jobTitle": "프론트엔드 개발자",
-            "url": "https://portfolio-krlee.vercel.app",
-            "sameAs": [
-                "https://github.com/LeeKangRyong"
-            ]
-        }
-    </script>
-    
-    <link rel="stylesheet" href="./src/styles/index.css">
+        <link rel="icon" href="/gamja.png">
+        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "이강룡",
+                "jobTitle": "프론트엔드 개발자",
+                "url": "https://portfolio-krlee.vercel.app",
+                "sameAs": [
+                    "https://github.com/LeeKangRyong"
+                ]
+            }
+        </script>
+        
+        <link rel="stylesheet" href="./src/styles/index.css">
 
-    <title>이강룡 포트폴리오</title>
-</head>
-<body>
-    <header class="navigation">
-        <nav>
-            <a href="#about">About me</a>
-            <a href="#history">History</a>
-            <a href="#skill">Skill</a>
-            <a href="#project">Project</a>
-        </nav>
-    </header>
-    <main>
-        <section id="about"></section>
-        <section id="history"></section>
-        <section id="skill"></section>
-        <section id="project"></section>
-    </main>
-    <footer>
-        <section id="contact"></section>
-    </footer>
+        <title>이강룡 포트폴리오</title>
+    </head>
+    <body>
+        <header class="navigation">
+            <nav>
+                <a data-target="about">About me</a>
+                <a data-target="history">History</a>
+                <a data-target="skill">Skill</a>
+                <a data-target="project">Project</a>
+            </nav>
+        </header>
+        <main>
+            <section id="about">
+                <article class="about">
+                    <h2>About Me</h2>
+                </article>
+            </section>
+            <section id="history">
+                <h2>History</h2>
+            </section>
+            <section id="skill">
+                <h2>Skill</h2>
+            </section>
+            <section id="project">
+                <h2>Project</h2>
+            </section>
+        </main>
+        <footer>
+            <section id="contact">
+                <h3>Contact</h3>
+            </section>
+        </footer>
 
-    <script src="src/scripts/index.js"></script>
-</body>
+        <script type="module" src="src/scripts/index.js"></script>
+    </body>
 </html>
