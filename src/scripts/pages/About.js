@@ -2,7 +2,7 @@ import { ABOUT } from '../../data/aboutData.js';
 
 class About {
     constructor() {
-        this.container = document.querySelector('.about');
+        this.container = document.querySelector('.aboutText');
         this.nextTextDelay = 800;
     }
 
@@ -10,7 +10,6 @@ class About {
         const descriptions = this.container.querySelector('p');
         if (descriptions) descriptions.remove();
     }
-
     #writeText(text) {
         const para = document.createElement('p');
         para.textContent = text;
@@ -37,8 +36,24 @@ class About {
         });
     }
 
+    #showMyInfo() {
+    const infoData = [
+        { label: '이름', value: ABOUT.NAME },
+        { label: '출생년도', value: ABOUT.AGE }
+    ];
+
+    const aboutTitle = document.querySelector('.aboutTitle');
+    
+    infoData.forEach(({ label, value }) => {
+        const p = document.createElement('p');
+        p.textContent = `${label}: ${value}`;
+        aboutTitle.appendChild(p);
+    });
+}
+
     init() {
         this.#renderDescriptions();
+        this.#showMyInfo()
     }
 }
 
