@@ -24,7 +24,7 @@ class About {
         }, delay);
     }
 
-    #renderParagraph(text, index) {
+    #renderText(text, index) {
         const para = this.#writeText(text);
         this.container.appendChild(para);
         this.#showText(para, index * this.nextTextDelay);
@@ -33,7 +33,7 @@ class About {
     #renderDescriptions() {
         this.#removeDescriptions();
         ABOUT.DESCRIPTION.forEach((text, index) => {
-            this.#renderParagraph(text, index);
+            this.#renderText(text, index);
         });
     }
 
