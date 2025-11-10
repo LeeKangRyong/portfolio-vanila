@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "BMJUA";
-    src: url("../assets/fonts/BMJUA.ttf");
+    src: url("/src/assets/fonts/BMJUA.ttf");
 }
 
 :root {
