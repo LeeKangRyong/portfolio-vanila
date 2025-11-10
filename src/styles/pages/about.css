@@ -15,16 +15,20 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    height: 60vh;
-
+    min-height: 50vh;
 }
 
 .aboutText {
+    display: flex;
+    flex-direction: column;
     width: 60vw;
     padding: 0 2rem;
     background-color: var(--color-gray);
     border-radius: 2rem;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
 }
 
 .aboutTitle {
@@ -36,7 +40,7 @@
 
 
 .myFace {
-    height: 40vh;
+    height: 30vh;
     width: 100%;
     object-fit: cover;
 }

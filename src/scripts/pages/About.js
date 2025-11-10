@@ -14,6 +14,7 @@ class About {
         const para = document.createElement('p');
         para.textContent = text;
         para.style.opacity = '0';
+        para.style.transition = 'opacity 0.8s ease-in-out';
         return para;
     }
 
