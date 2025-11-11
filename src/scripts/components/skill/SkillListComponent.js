@@ -8,21 +8,21 @@ class SkillListComponent {
     }
 
     async #getSkillInfo() {
-        let skillComponent = '';
-
         const iconNames = this.data.ICON;
         const skillNames = this.data.NAME;
 
-        for (let i = 0; i < iconNames.length; i++) {
-            const iconName = iconNames[i];
-            const skillName = skillNames[i];
+        const iconPathPromises = iconNames.map(iconName => useAsset(iconName));
 
-            const iconPath = await useAsset(iconName);
+        const iconPaths = await Promise.all(iconPathPromises);
 
-            const skill = new SkillComponent(skillName, iconPath);
-
-            skillComponent += skill.makeSkillComponent();
-        }
+        let skillComponent = '';
+        iconPaths.forEach((iconPath, i) => {
+            if (iconPath) { //
+                const skillName = skillNames[i];
+                const skill = new SkillComponent(skillName, iconPath);
+                skillComponent += skill.makeSkillComponent();
+            }
+        });
 
         return skillComponent;
     }

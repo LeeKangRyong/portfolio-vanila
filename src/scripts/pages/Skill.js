@@ -16,14 +16,14 @@ class Skill {
     }
 
     async #renderSkill() {
-        let skill = '';
-
-        for (let skillObj of SKILL) {
+        const promises = SKILL.map(skillObj => {
             const skillComponent = this.#addSkillComponent(skillObj);
-            skill += await skillComponent.makeSkillListComponent();
-        }
+            return skillComponent.makeSkillListComponent();
+        });
 
-        this.target.innerHTML = skill;
+        const skillHtmlArray = await Promise.all(promises);
+
+        this.target.innerHTML = skillHtmlArray.join('');
     }
 
     init() {
