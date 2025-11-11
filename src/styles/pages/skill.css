@@ -1,1 +1,12 @@
 @import url("../components/skillComponent.css");
+
+.skillWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    gap: 4rem;
+}

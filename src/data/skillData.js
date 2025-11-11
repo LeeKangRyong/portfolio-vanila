@@ -2,7 +2,7 @@ const SKILL = [
     {
         TITLE: 'LANGUAGE',
         NAME: [
-            'JavaScript', 'Python'
+            'Java\nScript', 'Python'
         ],
         ICON: [
             'js', 'python'
@@ -15,7 +15,7 @@ const SKILL = [
             'HTML', 'CSS', 'Tailwind', 'Styled\nComponents'
         ],
         ICON: [
-            'react', 'react', 'zustand',
+            'react', 'rn', 'zustand',
             'html', 'css', 'tailwind', 'styled'
         ]
     },
@@ -59,3 +59,5 @@ const SKILL = [
         ]
     }
 ]
+
+export { SKILL };

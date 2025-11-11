@@ -1,0 +1,64 @@
+.skill {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 30%;
+}
+
+.skillContents {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-skill-border);
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.skillContents:hover {
+    transform: scale(1.02);
+}
+
+.skillItem {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    margin: 0.25rem;
+}
+
+.skillIcon {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+}
+
+.skillDescription {
+    font-size: 0.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.skillItem:hover .skillDescription {
+    opacity: 1;
+}
+
+.skillItem:hover .skillIcon {
+    opacity: 0.3;
+}

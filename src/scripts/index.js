@@ -1,6 +1,7 @@
 import { Navigation } from './components/layout/Navigation.js';
 import { About } from './pages/about.js';
 import { History } from './pages/History.js';
+import { Skill } from './pages/Skill.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     const navigation = new Navigation();
@@ -11,6 +12,9 @@ window.addEventListener('DOMContentLoaded', () => {
     
     const history = new History();
     history.init();
+
+    const skill = new Skill();
+    skill.init();
     
     window.scrollTo(0, 0);
 });
