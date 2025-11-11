@@ -8,7 +8,7 @@ async function isAssetExists(assetPath) {
 }
 
 function buildAssetPath(assetName, extensionName) {
-    return `/assets/skill/${assetName}.${extensionName}`;
+    return `./src/assets/skill/${assetName}.${extensionName}`;
 }
 
 async function useAsset(assetName) {
