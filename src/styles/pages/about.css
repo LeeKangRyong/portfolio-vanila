@@ -1,15 +1,3 @@
-.aboutSection {    
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    max-width: 87.5rem;
-    margin: 6rem auto;
-    padding: 0 2rem;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-}
-
 .aboutInfo {
     display: flex;
     flex-wrap: wrap;
