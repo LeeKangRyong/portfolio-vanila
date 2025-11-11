@@ -47,6 +47,7 @@ class About {
     
     infoData.forEach(({ label, value }) => {
         const p = document.createElement('p');
+        p.style.marginTop = '0.8rem';
         p.textContent = `${label}: ${value}`;
         aboutTitle.appendChild(p);
     });
