@@ -1,4 +1,4 @@
-import { Navigation } from './components/Navigation.js';
+import { Navigation } from './components/layout/Navigation.js';
 import { About } from './pages/about.js';
 import { History } from './pages/History.js';
 

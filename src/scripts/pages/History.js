@@ -1,5 +1,5 @@
 import { HISTORY } from '../../data/historyData.js';
-import { HistoryComponent } from '../components/HistoryComponent.js';
+import { HistoryComponent } from '../components/history/HistoryComponent.js';
 
 class History {
     constructor() {
