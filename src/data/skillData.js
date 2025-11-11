@@ -12,11 +12,11 @@ const SKILL = [
         TITLE: 'FE',
         NAME: [
             'React', 'React\nNative', 'Zustand', 
-            'HTML', 'CSS'
+            'HTML', 'CSS', 'Tailwind', 'Styled\nComponents'
         ],
         ICON: [
             'react', 'react', 'zustand',
-            'html', 'css'
+            'html', 'css', 'tailwind', 'styled'
         ]
     },
     {
@@ -31,10 +31,13 @@ const SKILL = [
     {
         TITLE: 'DEPLOYMENT',
         NAME: [
-            'Netlify, Verce, AWS, Azure, Github\nActions'
+            'Netlify', 'Vercel', 'AWS', 'Azure', 
+            'Github\nActions', 'Ngrok', 'NGINX',
+            'pm2'
         ],
         ICON: [
-            'netlify', 'vercel', 'aws', 'azure', 'github'
+            'netlify', 'vercel', 'aws', 'azure', 
+            'github', 'Ngrok', 'nginx', 'pm2'
         ]
     },
     {
