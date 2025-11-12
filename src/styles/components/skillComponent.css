@@ -39,7 +39,7 @@
 .skillIcon {
     width: 4rem;
     height: 4rem;
-    object-fit: contain;
+    object-fit: cover;
     background-color: var(--color-white);
     border-radius: 0.5rem;
 }

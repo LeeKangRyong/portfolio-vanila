@@ -11,11 +11,11 @@ const SKILL = [
     {
         TITLE: 'FE',
         NAME: [
-            'React', 'React\nNative', 'Zustand', 
+            'Next.js', 'React', 'React\nNative', 'Zustand', 
             'HTML', 'CSS', 'Tailwind', 'Styled\nComponents'
         ],
         ICON: [
-            'react', 'rn', 'zustand',
+            'nextjs', 'react', 'rn', 'zustand',
             'html', 'css', 'tailwind', 'styled'
         ]
     },
