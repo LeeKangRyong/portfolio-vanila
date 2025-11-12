@@ -1,0 +1,112 @@
+.project {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.projectThumbnail {
+    flex-shrink: 0;
+    transition: transform 1.2s ease;
+    transition: opacity 0.4s ease;
+}
+
+.projectThumbnail:hover {
+    transform: scale(1.02);
+    opacity: 0.6;
+}
+
+.thumbnail {
+    width: 38rem;
+    height: 26rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    background-color: var(--color-white);
+}
+
+.projectInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.githubIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.projectTitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+}
+
+.projectText {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--color-white);
+}
+
+.projectMember {
+    margin-top: 0.8rem;
+}
+.projectMember,
+.projectDuration {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.projectDuration {
+    margin-top: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.stackWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stackWrapper > .projectText {
+    font-weight: bold;
+}
+
+.stacks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+.stack {
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-stack);
+    padding: 0.4rem 0.8rem;
+    transition: opacity 0.4s ease;
+}
+
+.stackText {
+    font-size: 0.85rem;
+    margin: 0;
+    white-space: pre-line;
+    text-align: center;
+}
+
+.stack:hover {
+    opacity: 0.8;
+}

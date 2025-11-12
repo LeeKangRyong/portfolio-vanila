@@ -2,6 +2,7 @@
 @import url("../styles/pages/about.css");
 @import url("../styles/pages/history.css");
 @import url("../styles/pages/skill.css");
+@import url("../styles/pages/project.css");
 @import url("../styles/pages/contact.css");
 
 @font-face {
@@ -17,6 +18,7 @@
     --color-hover-gray: rgba(51, 51, 51, 0.8);
     --color-vertical-line: rgba(255, 255, 255, 0.5);
     --color-skill-border: rgba(255, 255, 255, 0.2);
+    --color-stack: rgba(255, 87, 87, 1);
 }
 
 * {

@@ -30,6 +30,7 @@
     font-size: 0.8rem;
 }
 
-.skillIcon:hover {
-    opacity: 0.6;
+.contactText:hover {
+    cursor: pointer;
+    color: var(--color-hover);
 }

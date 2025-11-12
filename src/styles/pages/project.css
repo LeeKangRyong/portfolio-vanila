@@ -1,0 +1,7 @@
+@import url("../components/projectComponent.css");
+
+.projectWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
