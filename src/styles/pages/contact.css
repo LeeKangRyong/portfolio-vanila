@@ -10,7 +10,10 @@
 
 .contact {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 4rem;
     margin-top: 0.5rem;
 }
