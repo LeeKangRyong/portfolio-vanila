@@ -1,0 +1,32 @@
+.contactWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: -12rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gray);
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    margin-top: 0.5rem;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactText {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.skillIcon:hover {
+    opacity: 0.6;
+}
