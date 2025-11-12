@@ -7,6 +7,11 @@
     gap: 3rem;
     width: 100%;
     border-bottom: 1px solid var(--color-vertical-line);
+    transition: transform 0.4s ease;
+}
+
+.history:hover {
+    transform: scale(1.05);
 }
 
 .history:last-child {
