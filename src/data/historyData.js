@@ -21,7 +21,7 @@ const HISTORY = [
     },
     {
         TITLE: "TeamWorks",
-        DURATION: "2024.07 ~ 2025.10",
+        DURATION: "2024.07 ~ 현재",
         DESCRIPTION: "창업 기반 프로젝트 진행\nBE(1), FE(1), 기획자(1), 디자이너(1)\nFE 담당"
     },
     {
