@@ -3,6 +3,7 @@ import { About } from './pages/about.js';
 import { History } from './pages/History.js';
 import { Skill } from './pages/Skill.js';
 import { Project } from './pages/Project.js';
+import { Contact } from './pages/Contact.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     const navigation = new Navigation();
@@ -19,6 +20,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const project = new Project();
     project.init();
+
+    const contact = new Contact();
+    contact.init();
+
+
     
     window.scrollTo(0, 0);
 });
