@@ -1,3 +1,5 @@
+@import url("./projectModalComponent.css");
+
 .project {
     display: flex;
     flex-direction: row;
@@ -9,12 +11,15 @@
 }
 
 .projectThumbnail {
+    position: relative;
     flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 1rem;
     transition: transform 1.2s ease;
     transition: opacity 0.4s ease;
 }
 
-.projectThumbnail:hover {
+.projectThumbnail:hover .thumbnail {
     transform: scale(1.02);
     opacity: 0.6;
 }
@@ -23,8 +28,35 @@
     width: 38rem;
     height: 26rem;
     object-fit: cover;
-    border-radius: 1rem;
     background-color: var(--color-white);
+}
+
+.thumbnailInfo {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 10;
+    flex-direction: row;
+    gap: 7rem;
+}
+
+.projectThumbnail:hover .thumbnailInfo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.thumbnailText {
+    background-color: var(--color-gray);
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
 }
 
 .projectInfo {
@@ -59,8 +91,8 @@
 .projectMember {
     margin-top: 0.8rem;
 }
-.projectMember,
-.projectDuration {
+
+.projectMember, .projectDuration {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;

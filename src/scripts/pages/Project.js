@@ -5,6 +5,39 @@ import { useAsset } from "../utils/useAsset.js";
 class Project {
     constructor() {
         this.projectWrapper = document.querySelector('.projectWrapper');
+        this.#addModalEvents();
+    }
+
+    #addModalEvents() {
+        this.projectWrapper.addEventListener('click', this.#handleModalClick.bind(this));
+    }
+
+    #handleModalClick(event) {
+        const target = event.target;
+
+        if (target.classList.contains('openModal')) {
+            this.#openModal(target);
+        }
+
+        if (target.classList.contains('closeModal')) {
+            this.#closeModal(target);
+        }
+    }
+
+    #openModal(target) {
+        const project = target.closest('.project');
+        if (project) {
+            project.querySelector('.modal').style.display = 'flex';
+            document.body.classList.add('modalOpenState');
+        }
+    }
+
+    #closeModal(target) {
+        const modal = target.closest('.modal');
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.classList.remove('modalOpenState');
+        }
     }
 
     async #getProjectElement(projectData) {

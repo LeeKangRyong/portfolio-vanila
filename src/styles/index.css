@@ -19,6 +19,7 @@
     --color-vertical-line: rgba(255, 255, 255, 0.5);
     --color-skill-border: rgba(255, 255, 255, 0.2);
     --color-stack: rgba(255, 87, 87, 1);
+    --color-modal-background: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -60,4 +61,8 @@ article {
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+}
+
+body.modalOpenState {
+    overflow: hidden;
 }

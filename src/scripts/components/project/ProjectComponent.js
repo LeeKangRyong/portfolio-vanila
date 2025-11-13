@@ -1,3 +1,5 @@
+import { ProjectModalComponent } from "./ProjectModalComponent.js";
+
 class ProjectComponent {
     constructor({ title, thumbnail, description, member, role, duration, fe_stack, github }) {
         this.title = title;
@@ -27,16 +29,22 @@ class ProjectComponent {
 
     makeProjectComponent() {
         const stackComponents = this.#makeAllStackComponents();
-
+        const modalClass = new ProjectModalComponent();
+        const modalComponent = modalClass.makeProjectModalComponent();
+    
         return `
             <div class="project">
                 <div class="projectThumbnail">
                     <img src="${this.thumbnail}" alt="thumbnail" class="thumbnail" />
+                    <div class="thumbnailInfo">
+                        <button class="thumbnailText openModal">데모 보기</button>
+                        <button class="thumbnailText openModal">상세 보기</button>
+                    </div>
                 </div>
                 <div class="projectInfo">
-                    <div class="githubIcon">
+                    <a href="${this.github}" target="_blank" rel="noopener noreferrer" class="githubIcon">
                         <img src="./src/assets/skill/github.png" alt="github" class="skillIcon" />
-                    </div>
+                    </a>
                     <h3 class="projectTitle">${this.title}</h3>
                     <p class="projectText">${this.description}</p>
                     <div class="projectMember">
@@ -54,6 +62,8 @@ class ProjectComponent {
                         </div>
                     </div>
                 </div>
+
+                ${modalComponent}
             </div>
         `;
     }
