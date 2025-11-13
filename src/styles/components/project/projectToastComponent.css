@@ -1,0 +1,37 @@
+.projectToast {
+    position: absolute;
+    bottom: 100%;
+    left: 15%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px var(--color-modal-background);
+    margin-bottom: 0.5rem;
+}
+
+.projectToast::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--color-modal-background);
+}
+
+.projectToast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-15px);
+}

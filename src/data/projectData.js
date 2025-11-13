@@ -7,6 +7,7 @@ const PROJECT = [
         MEMBER: "개발 (2), 디자인 (1), 기획 (1)",
         ROLE: "FE 개발",
         DURATION: "2025.08 ~ 현재",
+        DEMO_LINK: "https://teamworks-space.site",
         FE_STACK: [
             "Next.js", "Java\nScript", "HTML", "TailwindCSS",
             "Zustand", "ReChart", "Chart.js"
@@ -31,6 +32,7 @@ const PROJECT = [
         MEMBER: "개발 (1)",
         ROLE: "기획, 디자인, 개발",
         DURATION: "2025.06 ~ 2025.07 (2주)",
+        DEMO_LINK: "https://portfolio-krlee.netlify.app",
         FE_STACK: [
             "React", "Java\nScript", "HTML",
             "CSS", "Framer\nMotion"
@@ -58,6 +60,7 @@ const PROJECT = [
         MEMBER: "개발 (1)",
         ROLE: "기획, 디자인, 개발",
         DURATION: "2025.11 ~ 2025.11 (1주)",
+        DEMO_LINK: "https://portfolio-krlee-vanila.netlify.app",
         FE_STACK: [
             "Java\nScript", "HTML", "CSS"
         ],
@@ -85,6 +88,7 @@ const PROJECT = [
         MEMBER: "AI (3), 디자인/기획 (1), 개발 (1)",
         ROLE: "풀스택 개발",
         DURATION: "2025.05 ~ 2025.08",
+        DEMO_LINK: "none",
         FE_STACK: [
             "React\nNative", "Java\nScript", "HTML",
             "Styled\nComponents", "Zustand"
@@ -108,11 +112,12 @@ const PROJECT = [
     {
         TITLE: "EncapMoments",
         THUMBNAIL: "encap_thumbnail",
-        TOP_COLOR: "#aaab52",
+        TOP_COLOR: "#504B38",
         DESCRIPTION: "AI 미션 기반 추억을 만들고 저장하는 가족 공유 앱서비스",
         MEMBER: "BE (2), FE( (1)",
         ROLE: "기획, 디자인, FE",
         DURATION: "2025.03 ~ 2025.05",
+        DEMO_LINK: "none",
         FE_STACK: [
             "React\nNative", "Java\nScript", "HTML",
             "CSS", "Zustand"

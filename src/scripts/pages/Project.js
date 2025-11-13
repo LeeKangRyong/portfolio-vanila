@@ -1,5 +1,6 @@
 import { PROJECT } from "../../data/projectData.js";
 import { ProjectComponent } from "../components/project/ProjectComponent.js";
+import { ProjectToastComponent } from "../components/project/ProjectToastComponent.js";
 import { useAsset } from "../utils/useAsset.js";
 
 class Project {
@@ -22,13 +23,30 @@ class Project {
         if (target.classList.contains('closeModal')) {
             this.#closeModal(target);
         }
+
+        if (target.classList.contains('openDemo')) {
+            this.#openDemo(target);
+        }
+    }
+
+    #openDemo(target) {
+        const project = target.closest('.project');
+        if (project) {
+            const demoLink = project.dataset.demoLink;
+            if (demoLink && demoLink !== 'none') {
+                window.open(demoLink, '_blank');
+            } else if (demoLink === 'none') {
+                const toast = new ProjectToastComponent(target);
+                toast.show();
+            }
+        }
     }
 
     #openModal(target) {
         const project = target.closest('.project');
         if (project) {
             project.querySelector('.modal').style.display = 'flex';
-            document.body.classList.add('modalOpenState');
+            document.body.style.overflow = 'hidden';
         }
     }
 
@@ -36,7 +54,7 @@ class Project {
         const modal = target.closest('.modal');
         if (modal) {
             modal.style.display = 'none';
-            document.body.classList.remove('modalOpenState');
+            document.body.style.overflow = '';
         }
     }
 
@@ -51,7 +69,12 @@ class Project {
             role: projectData.ROLE,
             duration: projectData.DURATION,
             fe_stack: projectData.FE_STACK,
-            github: projectData.GITHUB
+            be_stack: projectData.BE_STACK,
+            deployment: projectData.DEPLOYMENT,
+            tool: projectData.TOOL,
+            github: projectData.GITHUB,
+            top_color: projectData.TOP_COLOR,
+            demo_link: projectData.DEMO_LINK
         });
 
         return projectComponent;
@@ -64,7 +87,6 @@ class Project {
         
         return projectElement.firstElementChild;
     }
-
 
     async #makeProjects() {
         const projectPromises = PROJECT.map(projectData => 

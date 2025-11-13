@@ -1,7 +1,7 @@
 import { ProjectModalComponent } from "./ProjectModalComponent.js";
 
 class ProjectComponent {
-    constructor({ title, thumbnail, description, member, role, duration, fe_stack, github }) {
+    constructor({ title, thumbnail, description, member, role, duration, fe_stack, be_stack, deployment, tool, github, top_color, demo_link }) {
         this.title = title;
         this.thumbnail = thumbnail;
         this.description = description;
@@ -9,7 +9,12 @@ class ProjectComponent {
         this.role = role;
         this.duration = duration;
         this.fe_stack = fe_stack;
+        this.be_stack = be_stack;
+        this.deployment = deployment;
+        this.tool = tool;
         this.github = github;
+        this.top_color = top_color;
+        this.demo_link = demo_link;
     }
 
     #makeProjectStackComponent({ stack }) {
@@ -22,22 +27,35 @@ class ProjectComponent {
 
     #makeAllStackComponents() {
         const stacks = this.fe_stack.map(stackName => this.#makeProjectStackComponent({ stack: stackName }));
-
         return stacks.join('');
-
     }
 
     makeProjectComponent() {
         const stackComponents = this.#makeAllStackComponents();
-        const modalClass = new ProjectModalComponent();
+        
+        const modalClass = new ProjectModalComponent({
+            title: this.title,
+            topColor: this.top_color,
+            member: this.member,
+            role: this.role,
+            duration: this.duration,
+            feStack: this.fe_stack,
+            beStack: this.be_stack,
+            deployment: this.deployment,
+            tool: this.tool,
+            github: this.github
+        });
+        
         const modalComponent = modalClass.makeProjectModalComponent();
+        
+        const showDemoButton = this.demo_link && this.demo_link !== 'none';
     
         return `
-            <div class="project">
+            <div class="project" data-demo-link="${this.demo_link}">
                 <div class="projectThumbnail">
                     <img src="${this.thumbnail}" alt="thumbnail" class="thumbnail" />
                     <div class="thumbnailInfo">
-                        <button class="thumbnailText openModal">데모 보기</button>
+                        <button class="thumbnailText openDemo">데모 보기</button>
                         <button class="thumbnailText openModal">상세 보기</button>
                     </div>
                 </div>

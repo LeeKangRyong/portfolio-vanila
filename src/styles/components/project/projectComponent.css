@@ -1,4 +1,5 @@
 @import url("./projectModalComponent.css");
+@import url("./projectToastComponent.css");
 
 .project {
     display: flex;
