@@ -25,7 +25,6 @@ const PROJECT = [
         IMAGES: [
             "teamworks_1", "teamworks_2", "teamworks_3", "teamworks_4"
         ],
-        ARCHITECTURE: "teamworks_architecture",
         FUNCTION: [
             "AI 기반 팀원 개인별 기여도 분석 및 무임승차 자동 감지",
             "관리자/참여자 역할 별 차별화된 대시보드",
@@ -55,7 +54,7 @@ const PROJECT = [
         TITLE: "포트폴리오 (VanillaJS)",
         DESCRIPTION: "기존 포트폴리오를 기술적 도전을 위해 VanillaJS로 재구현 및 리뉴얼",
         TOP_COLOR: "#dba231",
-        THUMBNAIL: "portfolio_vanila_thumbnail",
+        THUMBNAIL: "portfolio_thumbnail",
         MEMBER: "총 1명",
         ROLE: "FE, 디자인, 기획",
         DURATION: "2025.11 ~ 2025.11 (1주)",
