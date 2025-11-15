@@ -15,6 +15,7 @@
 .modalContentWrapper {
     background-color: var(--color-white);
     border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 1.25rem var(--color-modal-background);
     max-width: 60rem;
     width: 90%;
     max-height: 90vh;
@@ -54,21 +55,106 @@
 }
 
 .modalSection {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.modalSection:last-child {
+    margin-bottom: 0;
 }
 
 .modalSection h3 {
-    font-size: 1.2rem;
-    margin: 0 0 0.8rem 0;
+    font-size: 1.3rem;
+    margin: 0 0 1rem 0;
     color: var(--color-black);
     font-weight: bold;
 }
 
 .modalSection p {
     font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-black);
+    line-height: 1.6;
+}
+
+.modalResultImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.modalResultImage {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.modalResultImage:hover {
+    transform: scale(1.03);
+}
+
+.modalList {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.modalList li {
+    font-size: 1rem;
+    color: var(--color-black);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.troubleList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.troubleItem {
+    background-color: var(--color-gray);
+    border-radius: 0.5rem;
+    padding: 1.2rem;
+}
+
+.troubleRow {
+    margin-bottom: 0.8rem;
+}
+
+.troubleRow:last-child {
+    margin-bottom: 0;
+}
+
+.troubleRow strong {
+    display: inline-block;
+    min-width: 4rem;
+    color: var(--color-black);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.troubleRow p {
+    display: inline;
     margin: 0;
     color: var(--color-black);
-    line-height: 1.5;
+}
+
+.stackGroup {
+    margin-bottom: 1rem;
+}
+
+.stackGroup:last-child {
+    margin-bottom: 0;
+}
+
+.stackLabel {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-black);
+    margin: 0 0 0.5rem 0;
 }
 
 .modalStacks {
@@ -91,21 +177,6 @@
     text-align: center;
 }
 
-.modalGithubLink {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--color-black);
-    color: var(--color-white);
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    transition: opacity 0.3s ease;
-}
-
-.modalGithubLink:hover {
-    opacity: 0.8;
-}
-
 .closeModal {
     position: absolute;
     top: 1rem;
@@ -126,5 +197,30 @@
 }
 
 .closeModal:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
+    box-shadow: 0 0.25rem 0.75rem var(--color-modal-background);
+}
+
+@media screen and (max-width: 767px) {
+    .modalResultImages {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .modalContentWrapper {
+        width: 95%;
+        max-height: 85vh;
+    }
+    
+    .modalContent {
+        padding: 1.5rem;
+    }
+    
+    .modalTitle {
+        font-size: 1.6rem;
+    }
+    
+    .modalDuration {
+        font-size: 1rem;
+    }
 }

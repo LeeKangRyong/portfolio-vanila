@@ -1,7 +1,7 @@
 import { ProjectModalComponent } from "./ProjectModalComponent.js";
 
 class ProjectComponent {
-    constructor({ title, thumbnail, description, member, role, duration, fe_stack, be_stack, deployment, tool, github, top_color, demo_link }) {
+    constructor({ title, thumbnail, description, member, role, duration, fe_stack, be_stack, deployment, tool, github, top_color, demo_link, functions, result, trouble, images }) {
         this.title = title;
         this.thumbnail = thumbnail;
         this.description = description;
@@ -15,9 +15,13 @@ class ProjectComponent {
         this.github = github;
         this.top_color = top_color;
         this.demo_link = demo_link;
+        this.functions = functions;
+        this.result = result;
+        this.trouble = trouble;
+        this.images = images;
     }
 
-    #makeProjectStackComponent({ stack }) {
+    #makeStackComponent(stack) {
         return `
             <div class="stack">
                 <p class="stackText">${stack}</p>
@@ -26,14 +30,12 @@ class ProjectComponent {
     }
 
     #makeAllStackComponents() {
-        const stacks = this.fe_stack.map(stackName => this.#makeProjectStackComponent({ stack: stackName }));
+        const stacks = this.fe_stack.map(stackName => this.#makeStackComponent(stackName));
         return stacks.join('');
     }
 
-    makeProjectComponent() {
-        const stackComponents = this.#makeAllStackComponents();
-        
-        const modalClass = new ProjectModalComponent({
+    #createModal() {
+        const modal = new ProjectModalComponent({
             title: this.title,
             topColor: this.top_color,
             member: this.member,
@@ -43,13 +45,17 @@ class ProjectComponent {
             beStack: this.be_stack,
             deployment: this.deployment,
             tool: this.tool,
-            github: this.github
+            github: this.github,
+            functions: this.functions,
+            result: this.result,
+            trouble: this.trouble,
+            images: this.images
         });
-        
-        const modalComponent = modalClass.makeProjectModalComponent();
-        
-        const showDemoButton = this.demo_link && this.demo_link !== 'none';
-    
+
+        return modal.makeProjectModalComponent();
+    }
+
+    makeProjectComponent() {
         return `
             <div class="project" data-demo-link="${this.demo_link}">
                 <div class="projectThumbnail">
@@ -76,12 +82,12 @@ class ProjectComponent {
                     <div class="stackWrapper">
                         <p class="projectText">FE Stack</p>
                         <div class="stacks">
-                            ${stackComponents}
+                            ${this.#makeAllStackComponents()}
                         </div>
                     </div>
                 </div>
 
-                ${modalComponent}
+                ${this.#createModal()}
             </div>
         `;
     }
