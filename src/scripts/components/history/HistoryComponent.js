@@ -1,12 +1,12 @@
 class HistoryComponent {
-    constructor(title, duration, description) {
-        this.title = title;
-        this.duration = duration;
-        this.description = description;
-    }
+  constructor(title, duration, description) {
+    this.title = title;
+    this.duration = duration;
+    this.description = description;
+  }
 
-    makeHistoryComponent() {
-        return `
+  makeHistoryComponent() {
+    return `
             <div class="history">
                 <div class="titleWrapper">
                     <h3 class="title">${this.title}</h3>
@@ -18,7 +18,7 @@ class HistoryComponent {
                 </div>
             </div>
         `;
-    }
+  }
 }
 
 export { HistoryComponent };

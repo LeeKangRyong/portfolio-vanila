@@ -1,107 +1,140 @@
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="LeeKangRyong">
-        <meta name="description" content="프론트엔드 개발자 이강룡의 포트폴리오입니다. vanillaJS로 구현했습니다.">
-        <meta name="keywords" content="프론트엔드, FE, 개발자, 포트폴리오, JavaScript, HTML, CSS">
-        
-        <meta property="og:title" content="이강룡 - FE 포트폴리오">
-        <meta property="og:description" content="프론트엔드 개발자 이강룡의 포트폴리오">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://portfolio-krlee-vanila.netlify.app">
-        <meta property="og:image" content="https://portfolio-krlee-vanila.netlify.app/thumbnail.png">
-        
-        <meta name="robots" content="index, follow">
-        <link rel="canonical" href="https://portfolio-krlee-vanila.netlify.app">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="LeeKangRyong" />
+    <meta
+      name="description"
+      content="프론트엔드 개발자 이강룡의 포트폴리오입니다. vanillaJS로 구현했습니다."
+    />
+    <meta
+      name="keywords"
+      content="프론트엔드, FE, 개발자, 포트폴리오, JavaScript, HTML, CSS"
+    />
 
-        <link rel="icon" href="/gamja.png">
-        
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "이강룡",
-                "jobTitle": "프론트엔드 개발자",
-                "url": "https://portfolio-krlee-vanila.netlify.app",
-                "sameAs": [
-                    "https://github.com/LeeKangRyong"
-                ]
-            }
-        </script>
-        
-        <link rel="stylesheet" href="./src/styles/index.css">
+    <meta property="og:title" content="이강룡 - FE 포트폴리오" />
+    <meta
+      property="og:description"
+      content="프론트엔드 개발자 이강룡의 포트폴리오"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://portfolio-krlee-vanila.netlify.app"
+    />
+    <meta
+      property="og:image"
+      content="https://portfolio-krlee-vanila.netlify.app/thumbnail.png"
+    />
 
-        <title>이강룡 포트폴리오</title>
-    </head>
-    <body>
-        <header class="navigation">
-            <nav>
-                <a data-target="about">About</a>
-                <a data-target="history">History</a>
-                <a data-target="skill">Skill</a>
-                <a data-target="project">Project</a>
-            </nav>
-        </header>
-        <main>
-            <section id="about">
-                <article>
-                    <h1>About Me</h1>
-                    <div class="aboutInfo">
-                        <div class="aboutText"></div>
-                        <div class="aboutTitle">
-                            <img src="./src/assets/about/face.jpg" alt="my face" class="myFace">
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <section id="history">
-                <article>
-                    <h1>History</h1>
-                    <div class="historyWrapper"></div>
-                </article>
-            </section>
-            <section id="skill">
-                <article>
-                    <h1>Skill</h1>
-                    <div class="skillWrapper"></div>
-                </article>
-            </section>
-            <section id="project">
-                <article>
-                    <h1>Project</h1>
-                    <div class="projectWrapper"></div>
-                </article>
-            </section>
-        </main>
-        <footer>
-            <section id="contact">
-                <article>
-                    <div class="contactWrapper">
-                        <h2>Contact Me</h2>
-                        <div class="contact">
-                            <div class="contactInfo">
-                                <img src="./src/assets/skill/instagram.jpg" alt="instagram" class="skillicon" />
-                                <p class="contactText">@gangryongi</p>
-                            </div>
-                            <div class="contactInfo">
-                                <img src="./src/assets/skill/email.jpg" alt="email" class="skillicon" />
-                                <p class="contactText">gaiogo2@naver.com</p>
-                            </div>
-                            <div class="contactInfo">
-                                <img src="./src/assets/skill/github.png" alt="github" class="skillicon" />
-                                <p class="contactText">LeeKangRyong</p>
-                            </div>
-                            <div class="contactInfo">
-                                <img src="./src/assets/skill/notion.png" alt="notion" class="skillicon" />
-                                <p class="contactText">portfolio</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </section>
-        </footer>
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://portfolio-krlee-vanila.netlify.app" />
 
-        <script type="module" src="src/scripts/index.js"></script>
-    </body>
+    <link rel="icon" href="/gamja.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "이강룡",
+        "jobTitle": "프론트엔드 개발자",
+        "url": "https://portfolio-krlee-vanila.netlify.app",
+        "sameAs": ["https://github.com/LeeKangRyong"]
+      }
+    </script>
+
+    <link rel="stylesheet" href="./src/styles/index.css" />
+
+    <title>이강룡 포트폴리오</title>
+  </head>
+  <body>
+    <header class="navigation">
+      <nav>
+        <a data-target="about">About</a>
+        <a data-target="history">History</a>
+        <a data-target="skill">Skill</a>
+        <a data-target="project">Project</a>
+      </nav>
+    </header>
+    <main>
+      <section id="about">
+        <article>
+          <h1>About Me</h1>
+          <div class="aboutInfo">
+            <div class="aboutText"></div>
+            <div class="aboutTitle">
+              <img
+                src="./src/assets/about/face.jpg"
+                alt="my face"
+                class="myFace"
+              />
+            </div>
+          </div>
+        </article>
+      </section>
+      <section id="history">
+        <article>
+          <h1>History</h1>
+          <div class="historyWrapper"></div>
+        </article>
+      </section>
+      <section id="skill">
+        <article>
+          <h1>Skill</h1>
+          <div class="skillWrapper"></div>
+        </article>
+      </section>
+      <section id="project">
+        <article>
+          <h1>Project</h1>
+          <div class="projectWrapper"></div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <section id="contact">
+        <article>
+          <div class="contactWrapper">
+            <h2>Contact Me</h2>
+            <div class="contact">
+              <div class="contactInfo">
+                <img
+                  src="./src/assets/skill/instagram.jpg"
+                  alt="instagram"
+                  class="skillicon"
+                />
+                <p class="contactText">@gangryongi</p>
+              </div>
+              <div class="contactInfo">
+                <img
+                  src="./src/assets/skill/email.jpg"
+                  alt="email"
+                  class="skillicon"
+                />
+                <p class="contactText">gaiogo2@naver.com</p>
+              </div>
+              <div class="contactInfo">
+                <img
+                  src="./src/assets/skill/github.png"
+                  alt="github"
+                  class="skillicon"
+                />
+                <p class="contactText">LeeKangRyong</p>
+              </div>
+              <div class="contactInfo">
+                <img
+                  src="./src/assets/skill/notion.png"
+                  alt="notion"
+                  class="skillicon"
+                />
+                <p class="contactText">portfolio</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </footer>
+
+    <script type="module" src="src/scripts/index.js"></script>
+  </body>
 </html>

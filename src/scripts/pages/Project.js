@@ -4,117 +4,122 @@ import { ProjectToastComponent } from "../components/project/ProjectToastCompone
 import { useAsset } from "../utils/useAsset.js";
 
 class Project {
-    constructor() {
-        this.projectWrapper = document.querySelector('.projectWrapper');
-        this.#addModalEvents();
+  constructor() {
+    this.projectWrapper = document.querySelector(".projectWrapper");
+    this.#addModalEvents();
+  }
+
+  #addModalEvents() {
+    this.projectWrapper.addEventListener(
+      "click",
+      this.#handleModalClick.bind(this)
+    );
+  }
+
+  #handleModalClick(event) {
+    if (event.target.classList.contains("openModal")) {
+      this.#openModal(event.target);
+      return;
     }
 
-    #addModalEvents() {
-        this.projectWrapper.addEventListener('click', this.#handleModalClick.bind(this));
+    if (event.target.classList.contains("closeModal")) {
+      this.#closeModal(event.target);
+      return;
     }
 
-    #handleModalClick(event) {
-        if (event.target.classList.contains('openModal')) {
-            this.#openModal(event.target);
-            return;
-        }
+    if (event.target.classList.contains("openDemo")) {
+      this.#openDemo(event.target);
+    }
+  }
 
-        if (event.target.classList.contains('closeModal')) {
-            this.#closeModal(event.target);
-            return;
-        }
+  #openDemo(target) {
+    const project = target.closest(".project");
 
-        if (event.target.classList.contains('openDemo')) {
-            this.#openDemo(event.target);
-        }
+    if (!project) return;
+
+    const demoLink = project.dataset.demoLink;
+
+    if (demoLink && demoLink !== "none") {
+      window.open(demoLink, "_blank");
+      return;
     }
 
-    #openDemo(target) {
-        const project = target.closest('.project');
-        
-        if (!project) return;
+    const toast = new ProjectToastComponent(target);
+    toast.show();
+  }
 
-        const demoLink = project.dataset.demoLink;
-        
-        if (demoLink && demoLink !== 'none') {
-            window.open(demoLink, '_blank');
-            return;
-        }
+  #openModal(target) {
+    const project = target.closest(".project");
 
-        const toast = new ProjectToastComponent(target);
-        toast.show();
+    if (!project) return;
+
+    project.querySelector(".modal").style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  #closeModal(target) {
+    const modal = target.closest(".modal");
+
+    if (!modal) return;
+
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  async #loadImagePaths(images) {
+    if (!images) {
+      return null;
     }
 
-    #openModal(target) {
-        const project = target.closest('.project');
+    return await Promise.all(images.map((img) => useAsset(img)));
+  }
 
-        if (!project) return;
+  async #getProjectElement(projectData) {
+    const thumbnailPath = await useAsset(projectData.THUMBNAIL);
+    const imagePaths = await this.#loadImagePaths(projectData.IMAGES);
 
-        project.querySelector('.modal').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
+    return new ProjectComponent({
+      title: projectData.TITLE,
+      thumbnail: thumbnailPath,
+      description: projectData.DESCRIPTION,
+      member: projectData.MEMBER,
+      role: projectData.ROLE,
+      duration: projectData.DURATION,
+      fe_stack: projectData.FE_STACK,
+      be_stack: projectData.BE_STACK,
+      deployment: projectData.DEPLOYMENT,
+      tool: projectData.TOOL,
+      github: projectData.GITHUB,
+      top_color: projectData.TOP_COLOR,
+      demo_link: projectData.DEMO_LINK,
+      functions: projectData.FUNCTION,
+      result: projectData.RESULT,
+      trouble: projectData.TROUBLE,
+      images: imagePaths,
+    });
+  }
 
-    #closeModal(target) {
-        const modal = target.closest('.modal');
+  async #makeProjectElement(projectData) {
+    const projectComponent = await this.#getProjectElement(projectData);
+    const projectElement = document.createElement("div");
+    projectElement.innerHTML = projectComponent.makeProjectComponent();
 
-        if (!modal) return;
+    return projectElement.firstElementChild;
+  }
 
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
+  async #makeProjects() {
+    const projectElements = await Promise.all(
+      PROJECT.map((projectData) => this.#makeProjectElement(projectData))
+    );
 
-    async #loadImagePaths(images) {
-        if (!images) {
-            return null;
-        }
-        
-        return await Promise.all(images.map(img => useAsset(img)));
-    }
+    projectElements.forEach((element) =>
+      this.projectWrapper.appendChild(element)
+    );
+  }
 
-    async #getProjectElement(projectData) {
-        const thumbnailPath = await useAsset(projectData.THUMBNAIL);
-        const imagePaths = await this.#loadImagePaths(projectData.IMAGES);
-        
-        return new ProjectComponent({
-            title: projectData.TITLE,
-            thumbnail: thumbnailPath,
-            description: projectData.DESCRIPTION,
-            member: projectData.MEMBER,
-            role: projectData.ROLE,
-            duration: projectData.DURATION,
-            fe_stack: projectData.FE_STACK,
-            be_stack: projectData.BE_STACK,
-            deployment: projectData.DEPLOYMENT,
-            tool: projectData.TOOL,
-            github: projectData.GITHUB,
-            top_color: projectData.TOP_COLOR,
-            demo_link: projectData.DEMO_LINK,
-            functions: projectData.FUNCTION,
-            result: projectData.RESULT,
-            trouble: projectData.TROUBLE,
-            images: imagePaths
-        });
-    }
-
-    async #makeProjectElement(projectData) {
-        const projectComponent = await this.#getProjectElement(projectData);
-        const projectElement = document.createElement('div');
-        projectElement.innerHTML = projectComponent.makeProjectComponent();
-        
-        return projectElement.firstElementChild;
-    }
-
-    async #makeProjects() {
-        const projectElements = await Promise.all(
-            PROJECT.map(projectData => this.#makeProjectElement(projectData))
-        );
-        
-        projectElements.forEach(element => this.projectWrapper.appendChild(element));
-    }
-
-    init() {
-        this.#makeProjects();
-    }
+  init() {
+    this.#makeProjects();
+  }
 }
 
 export { Project };
