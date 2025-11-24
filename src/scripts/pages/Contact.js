@@ -23,7 +23,7 @@ class Contact {
       github: "https://github.com/LeeKangRyong/",
       instagram: "https://www.instagram.com/gangryongi/",
       notion:
-        "https://mulberry-browser-9b0.notion.site/1f4f36144c5f80a09fd3eff86a4f3064",
+        "https://mulberry-browser-9b0.notion.site/FE-Engineer-2aaf36144c5f80d9b867db263c85e9ab?pvs=74",
     };
     return links[imgAlt];
   }
